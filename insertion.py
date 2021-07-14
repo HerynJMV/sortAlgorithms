@@ -1,7 +1,7 @@
 import numpy as np
 
 def insertionSort(to_sort):
-    print(f'Array original: {to_sort}\n')
+    # print(f'Array original: {to_sort}\n')
     
     for index, value in enumerate(to_sort):
         
@@ -11,4 +11,5 @@ def insertionSort(to_sort):
             to_sort[newIndexToValue] = to_sort[newIndexToValue - 1]  
             to_sort[newIndexToValue - 1] = value
             newIndexToValue -= 1 
-            print(f'Así va el array: {to_sort}')
+            # print(f'Así va el array: {to_sort}')
+    return to_sort
