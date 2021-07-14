@@ -1,31 +1,31 @@
 import numpy as np
+from numpy.core.defchararray import index
 
 n = 10
 to_sort = np.random.randint(9, size = 10)
 
-
+print(f'Array desordenado: {to_sort}')
 for index_to_sort, value_to_sort in enumerate(to_sort):
 
-    minimum_index = index_to_sort
-    minimum_value = value_to_sort
-
-    print(f'Lista desordenada: {to_sort}')
+    print(f'Array en ordenamiento: {to_sort}')
     array_disorderly = to_sort[index_to_sort + 1:]
-    print(f'rango azul {array_disorderly}')
-    for item_index , item_value in enumerate(array_disorderly):    
-        
-        if item_value < minimum_value :
+    print(f'rango desordenado {array_disorderly}')
 
-            minimum_value = item_value
-            minimum_index = item_index + (index_to_sort + 1)
+    if len(array_disorderly) == 0:
+        break
 
-    print(f'Posición del minimo actual: {minimum_index}, Current minimum {minimum_value}' )
+    minimum_value = np.min(array_disorderly)
+    index_minimum_value = np.argmin(array_disorderly) + (index_to_sort + 1)
+
+    if value_to_sort < minimum_value:
+        minimum_value = value_to_sort
+        index_minimum_value = index_to_sort
+
+    print(f'Posición y valor del minimo en el rango desordenado: {index_minimum_value}, {minimum_value}' )
     # Asignar el valor de la posción 0 a la posición del minimo valor encontrado (minimun_index)
 
     # Intercambiar el valor min encontrado (minimum_value) con el de la posción 0
-    to_sort[minimum_index] = value_to_sort
+    to_sort[index_minimum_value] = value_to_sort
     to_sort[index_to_sort] = minimum_value
 
     print(f'Iteracion # {index_to_sort}: {to_sort} \n')
-
-
