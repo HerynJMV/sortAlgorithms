@@ -1,3 +1,5 @@
+from bubble import bubbleSort
+from heap import heap
 import numpy as np
 
 # Local imports
@@ -29,6 +31,12 @@ def main ():
 
         elif sort_algorithm == 2 :
             sortered = insertionSort(to_sort)
+
+        elif sort_algorithm == 3 :
+            sortered = heap(to_sort)
+
+        elif sort_algorithm == 4 :
+            sortered = bubbleSort(to_sort)
 
         elif sort_algorithm == 0:
             sortered = 'Hecho por Heryn y Miguel :3'
