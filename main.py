@@ -6,6 +6,7 @@ from insertion import insertionSort
 from bubble import bubbleSort
 from heap import heap
 from cocktail import cocktail
+from circle import circle
 
 list_algorithms = ['Huevo de pascua', 'Selection', 'Insertion',
     'Heap', 'Bubble', 'Cocktail']
@@ -21,6 +22,7 @@ def main ():
         3. Heap
         4. Bubble
         5. Cocktail
+        6. Circle
         -1. Salir\n'''))
 
         if sort_algorithm == -1:
@@ -45,6 +47,9 @@ def main ():
 
         elif sort_algorithm == 5 :
             sortered = cocktail(to_sort)
+
+        elif sort_algorithm == 6 :
+            sortered = circle(to_sort)
 
         elif sort_algorithm == 0:
             sortered = 'Hecho por Heryn y Miguel :3'
